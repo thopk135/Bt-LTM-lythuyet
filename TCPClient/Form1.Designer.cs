@@ -35,6 +35,9 @@
             label2 = new Label();
             txtMessage = new TextBox();
             btnSend = new Button();
+            pictureBox1 = new PictureBox();
+            sendimage = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -98,11 +101,31 @@
             btnSend.UseVisualStyleBackColor = true;
             btnSend.Click += btnSend_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(178, 408);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(104, 30);
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
+            // sendimage
+            // 
+            sendimage.Location = new Point(288, 409);
+            sendimage.Name = "sendimage";
+            sendimage.Size = new Size(109, 29);
+            sendimage.TabIndex = 4;
+            sendimage.Text = "Send Image";
+            sendimage.UseVisualStyleBackColor = true;
+            sendimage.Click += sendimage_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(sendimage);
+            Controls.Add(pictureBox1);
             Controls.Add(btnSend);
             Controls.Add(btnConnect);
             Controls.Add(txtInfocl);
@@ -113,6 +136,7 @@
             Name = "Form1";
             Text = "TCP Client";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -126,5 +150,7 @@
         private Label label2;
         private TextBox txtMessage;
         private Button btnSend;
+        private PictureBox pictureBox1;
+        private Button sendimage;
     }
 }

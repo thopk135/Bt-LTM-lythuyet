@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using SuperSimpleTcp;
 
 namespace TCPClient
@@ -75,6 +75,35 @@ namespace TCPClient
                 }
             }
             else MessageBox.Show("Nhap message");
+        }
+
+        private void sendimage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    byte[] imageData = File.ReadAllBytes(ofd.FileName);
+                    client.Send(imageData);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi gửi hình ảnh ");
+                }
+            }
+        }
+
+       
+
+        public byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg); // Đổi định dạng hình ảnh tùy vào định dạng của hình ảnh bạn đang sử dụng
+                return ms.ToArray();
+            }
         }
     }
 }

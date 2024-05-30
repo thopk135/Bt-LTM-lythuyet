@@ -36,7 +36,6 @@
             txtMessage = new TextBox();
             btnSend = new Button();
             listClientIP = new ListBox();
-            label3 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -109,21 +108,11 @@
             listClientIP.Size = new Size(392, 284);
             listClientIP.TabIndex = 3;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(120, 30);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 20);
-            label3.TabIndex = 4;
-            label3.Text = "Server";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1130, 450);
-            Controls.Add(label3);
             Controls.Add(listClientIP);
             Controls.Add(btnSend);
             Controls.Add(btnStart);
@@ -148,6 +137,5 @@
         private TextBox txtMessage;
         private Button btnSend;
         private ListBox listClientIP;
-        private Label label3;
     }
 }
